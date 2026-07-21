@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About LA Jewish Tonight — The Full Story</title>
+<meta name="description" content="The complete story behind LA Jewish Tonight — from fragmented event discovery to a shared community platform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-black:#070f20;
+  --navy:#0b1e3d;
+  --navy-2:#12294f;
+  --navy-3:#1e3a6b;
+  --brass:#c9a54b;
+  --brass-light:#e8d19a;
+  --ember:#b8460e;
+  --ember-light:#e0813f;
+  --parchment:#f6f1e4;
+  --parchment-2:#ece0c3;
+  --ink:#182036;
+  --ink-soft:#525c72;
+  --sage:#5f7350;
+  --sage-light:#95a67f;
+  --line-light:rgba(24,32,54,0.12);
+  --line-dark:rgba(232,209,154,0.18);
+  --shadow-navy:0 30px 60px -20px rgba(3,8,20,0.55);
+  --ff-display:'Newsreader', Georgia, serif;
+  --ff-body:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ff-mono:'IBM Plex Mono', ui-monospace, monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--ff-body);
+  background:var(--parchment);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;transition:.25s;}
+a:hover{color:var(--brass);}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+h1,h2,h3,h4{font-family:var(--ff-display);font-weight:600;line-height:1.08;letter-spacing:-0.01em;}
+em{font-style:italic;color:var(--brass);font-weight:500;}
+.container{max-width:1180px;margin:0 auto;padding:0 32px;}
+.eyebrow{
+  font-family:var(--ff-mono);
+  font-size:12.5px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--brass);
+  margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--brass);display:inline-block;}
+
+.topbar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--ember),var(--brass));z-index:900;width:0%;transition:width .12s linear;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:850;padding:22px 0;transition:.35s;background:transparent;}
+.nav.scrolled{padding:13px 0;background:rgba(7,15,32,0.86);backdrop-filter:blur(14px);box-shadow:0 8px 26px -14px rgba(0,0,0,.5);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--ff-display);font-size:20px;color:#fff;letter-spacing:-0.01em;}
+.brand small{font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;color:var(--brass-light);text-transform:uppercase;display:block;margin-top:1px;font-weight:500;}
+.nav-links{display:flex;gap:26px;list-style:none;}
+.nav-links a{font-size:13.5px;color:rgba(246,241,228,0.72);position:relative;padding:4px 0;transition:.25s;}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--brass);transition:.3s;}
+.nav-links a:hover,.nav-links a.active{color:#fff;}
+.nav-links a.active::after,.nav-links a:hover::after{width:100%;}
+@media (max-width:1000px){.nav-links{display:none;}}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  font-family:var(--ff-mono);
+  font-size:12.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:15px 26px;
+  border-radius:999px;
+  cursor:pointer;
+  border:1px solid transparent;
+  transition:.3s cubic-bezier(.2,.8,.3,1);
+  white-space:nowrap;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--brass-light),var(--brass));
+  color:#241a05;
+  position:relative;
+  overflow:hidden;
+}
+.btn-gold:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px -10px rgba(201,165,75,.55);
+}
+.btn-outline{border-color:var(--line-dark);color:#fff;}
+.btn-outline:hover{border-color:var(--brass);color:var(--brass-light);}
+.section-light .btn-outline{border-color:var(--line-light);color:var(--ink);}
+
+.section{position:relative;padding:118px 0;overflow:hidden;}
+@media (max-width:780px){.section{padding:76px 0;}}
+.section-dark{background:var(--navy);color:var(--parchment);}
+.section-dark h2{color:#fff;}
+.h2{font-size:clamp(30px,4vw,46px);max-width:780px;margin-bottom:22px;}
+.lede{font-size:18px;max-width:640px;color:var(--ink-soft);}
+.section-dark .lede{color:rgba(246,241,228,0.72);}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,.84,.44,1), transform .8s cubic-bezier(.16,.84,.44,1);}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:24px;}
+@media (max-width:860px){.two-col{grid-template-columns:1fr;}}
+
+/* STAT CARD GRID */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-light);border:1px solid var(--line-light);border-radius:18px;overflow:hidden;margin-top:54px;}
+@media (max-width:820px){.stat-grid{grid-template-columns:repeat(2,1fr);}}
+.stat-cell{background:#fff;padding:36px 26px;position:relative;overflow:hidden;}
+.stat-cell::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--brass),var(--ember));
+  opacity:0;
+  transition:opacity .3s;
+}
+.stat-cell:hover::before{opacity:1;}
+.stat-number{font-family:var(--ff-display);font-size:44px;color:var(--ink);display:flex;align-items:baseline;gap:2px;}
+.stat-number .suffix{font-size:24px;color:var(--ember);}
+.stat-cell .lab{font-family:var(--ff-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-top:8px;display:block;}
+
+/* CHART CARDS */
+.chart-card{background:#fff;border:1px solid var(--line-light);border-radius:18px;padding:34px;margin-top:40px;box-shadow:0 4px 12px rgba(24,32,54,.06);}
+.chart-title{font-family:var(--ff-display);font-size:20px;color:var(--ink);margin:0 0 24px;}
+.chart-line{stroke:var(--ember);stroke-width:2.5;fill:none;stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 1.8s cubic-bezier(.16,.84,.44,1);}
+.chart-line.drawn{stroke-dashoffset:0;}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0;position:relative;padding-left:26px;}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line-light);}
+.tl-item{position:relative;padding-bottom:34px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{content:"";position:absolute;left:-26px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--parchment);border:2px solid var(--ember);}
+.tl-tag{font-family:var(--ff-mono);font-size:11px;color:var(--ember);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;display:block;}
+.tl-item h4{font-size:17px;margin-bottom:5px;color:var(--ink);}
+.tl-item p{font-size:14px;color:var(--ink-soft);}
+
+/* CHECK LIST */
+.check-list{list-style:none;display:flex;flex-direction:column;gap:18px;margin-top:34px;}
+.check-list li{display:flex;gap:14px;align-items:flex-start;font-size:15.5px;}
+.check-list .tick{flex:none;width:22px;height:22px;border-radius:50%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px;}
+
+/* CARD GRID */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px;}
+@media (max-width:860px){.card-grid{grid-template-columns:1fr;}}
+.card{background:#fff;border:1px solid var(--line-light);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column;transition:.35s;}
+.card:hover{border-color:var(--brass);transform:translateY(-6px);box-shadow:0 30px 50px -24px rgba(24,32,54,.25);}
+.card-tag{font-family:var(--ff-mono);font-size:11px;color:var(--ember);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;}
+.card h3{font-size:21px;margin-bottom:10px;}
+.card p{font-size:14px;color:var(--ink-soft);margin-bottom:22px;flex-grow:1;}
+
+/* SCREENSHOT GRID */
+.screenshot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+@media (max-width:1000px){.screenshot-grid{grid-template-columns:1fr;}}
+.screenshot-card{border-radius:20px;overflow:hidden;box-shadow:0 4px 12px rgba(24,32,54,.06);background:#fff;border:1px solid var(--line-light);transition:all .4s cubic-bezier(.16,.84,.44,1);}
+.screenshot-card:hover{transform:translateY(-8px);border-color:var(--brass-light);box-shadow:0 40px 80px -20px rgba(3,8,20,.35);}
+.screenshot-img{width:100%;height:auto;display:block;}
+.screenshot-label{padding:16px;background:var(--parchment);text-align:center;}
+.screenshot-title{font-family:var(--ff-display);font-size:16px;color:var(--navy);margin:0 0 4px;}
+.screenshot-desc{font-size:12px;color:var(--ink-soft);margin:0;}
+
+/* FORM */
+.contact-form{max-width:520px;margin:0 auto;}
+.form-group{margin-bottom:16px;}
+.form-label{display:block;font-family:var(--ff-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:8px;}
+.form-input,.form-textarea{width:100%;padding:12px 14px;border:1px solid var(--line-light);border-radius:8px;font-family:var(--ff-body);font-size:14px;color:var(--ink);background:#fff;transition:.25s;}
+.form-input:focus,.form-textarea:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 3px rgba(201,165,75,.1);}
+.form-textarea{resize:vertical;min-height:120px;}
+
+/* FOOTER */
+footer{background:var(--ink-black);color:rgba(246,241,228,.7);padding:80px 0 30px;}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;padding-bottom:44px;border-bottom:1px solid var(--line-dark);}
+@media (max-width:820px){.foot-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:560px){.foot-grid{grid-template-columns:1fr;}}
+.foot-grid h5{font-family:var(--ff-mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--brass-light);margin-bottom:18px;}
+.foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.foot-grid a{font-size:13.5px;transition:.25s;}
+.foot-grid a:hover{color:var(--brass-light);}
+.foot-brand p{font-size:14px;max-width:280px;margin-top:14px;color:rgba(246,241,228,.55);}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;flex-wrap:wrap;gap:14px;font-size:12.5px;color:rgba(246,241,228,.45);}
+
+.pull-quote{font-family:var(--ff-display);font-style:italic;font-size:24px;color:var(--ink);border-left:3px solid var(--brass);padding:6px 0 6px 26px;margin:34px 0;line-height:1.4;}
+
+.data-box{
+  background:var(--parchment);
+  border:1px solid var(--line-light);
+  border-radius:12px;
+  padding:20px;
+  margin:16px 0;
+}
+.data-box strong{color:var(--navy);font-weight:600;}
+
+/* MINI STATS */
+.mini-stats{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--line-dark);padding-top:24px;margin-top:40px;}
+.mini-stats div{padding-right:30px;margin-right:30px;border-right:1px solid var(--line-dark);}
+.mini-stats div:last-child{border:none;}
+.mini-stats b{font-family:var(--ff-display);font-size:22px;color:var(--brass-light);display:block;}
+.mini-stats span{font-family:var(--ff-mono);font-size:10px;text-transform:uppercase;color:rgba(246,241,228,.55);letter-spacing:.05em;}
+</style>
+</head>
+<body>
+
+<div class="topbar" id="topbar"></div>
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="https://www.lajewishtonight.com" class="brand">
+      🕯️ LA <em>Jewish</em> Tonight
+      <small>Back to Homepage</small>
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://www.lajewishtonight.com">Home</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#partner">Partner</a></li>
+      <li><a href="#founder">Founder</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="section section-dark" style="padding-top:150px;">
+  <div class="container">
+    <div class="reveal is-visible">
+      <div class="eyebrow">The Complete Story</div>
+      <h1 style="font-size:clamp(36px,5vw,58px);color:#fff;max-width:680px;margin-bottom:24px;">How LA Jewish Tonight is building the front door to Jewish LA.</h1>
+      <p class="lede" style="color:rgba(246,241,228,0.78);margin-bottom:32px;">From 3,000+ people across four community groups and no central way to find events, to a mobile-first platform built for Jewish LA.</p>
+      <a href="#how-it-works" class="btn btn-gold">Explore the Platform</a>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM SECTION -->
+<section class="section section-light" id="platform">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">How It Works</div>
+      <h2 class="h2" id="how-it-works">Real-time discovery, built for <em>you</em>.</h2>
+      <p class="lede">Three taps: find an event, RSVP, see who's going. Then show up and actually know someone.</p>
+    </div>
+
+    <div class="screenshot-grid reveal">
+      <div class="screenshot-card">
+        <img src="/assets/screenshot-feed.png" alt="Live event feed with vibe matcher" class="screenshot-img">
+        <div class="screenshot-label">
+          <h3 class="screenshot-title">The Feed</h3>
+          <p class="screenshot-desc">Events + smart filters + vibe matching</p>
+        </div>
+      </div>
+      <div class="screenshot-card">
+        <img src="/assets/screenshot-network.png" alt="Community network discovery" class="screenshot-img">
+        <div class="screenshot-label">
+          <h3 class="screenshot-title">The Network</h3>
+          <p class="screenshot-desc">People you've crossed paths with</p>
+        </div>
+      </div>
+      <div class="screenshot-card">
+        <img src="/assets/screenshot-profile.png" alt="Personalized user profile" class="screenshot-img">
+        <div class="screenshot-label">
+          <h3 class="screenshot-title">Your Profile</h3>
+          <p class="screenshot-desc">Saved events + connections</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-box reveal">
+      <strong>🔥 What makes it different:</strong> Most event apps show you *any* event. LAJT shows you the events *you* want to go to, from organizations *you* trust, where you'll see *people you know*.
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM & ORIGIN -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="eyebrow">The Origin</div>
+        <h2 class="h2">The Problem.</h2>
+        <p class="lede">3,000+ people across four WhatsApp groups. Hundreds of events every month. No central way to find them unless you happened to be in the right chat at the right moment.</p>
+        <div class="pull-quote">"I kept watching genuinely great programming reach only a fraction of the people who would have loved to be there."</div>
+        <p style="color:rgba(246,241,228,0.78);margin-top:20px;font-size:16px;">Shabbat dinners, minyans, concerts, learning sessions — all disappearing into group chats, email newsletters, Instagram stories that the unaffiliated never saw.</p>
+        <div class="mini-stats" style="border-top-color:var(--line-dark);">
+          <div><b style="color:var(--ember);">3,000+</b><span>Community members</span></div>
+          <div><b style="color:var(--ember);">20+</b><span>Events shared daily</span></div>
+          <div><b style="color:var(--ember);">4</b><span>Regional WhatsApp groups</span></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="timeline">
+          <div class="tl-item"><span class="tl-tag">Early 2026</span><h4>The Signal</h4><p>Running LA Jewish Events across four regional groups made the fragmentation impossible to ignore.</p></div>
+          <div class="tl-item"><span class="tl-tag">Spring 2026</span><h4>First Build</h4><p>One HTML file, nights and weekends. A mobile event feed connected to Google Calendar and Supabase.</p></div>
+          <div class="tl-item"><span class="tl-tag">June 2026</span><h4>The Redesign</h4><p>A mobile-first homepage, event cards, filters, map and profile flows took shape inside a premium design system.</p></div>
+          <div class="tl-item"><span class="tl-tag">July 2026</span><h4>Social Layer</h4><p>Friend requests, event invitations, notifications and messaging infrastructure moved into active development.</p></div>
+          <div class="tl-item"><span class="tl-tag">Today</span><h4>Institutional</h4><p>Building the infrastructure a funder, a Federation, a board member can actually stand behind.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="section section-light" id="impact">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Impact & Traction</div>
+      <h2 class="h2">The numbers, so far.</h2>
+      <p class="lede">A snapshot of the community infrastructure already built around LA Jewish Events and now being brought into LAJT.</p>
+    </div>
+
+    <div class="stat-grid stagger">
+      <div class="stat-cell reveal" style="--i:0"><div class="stat-number" data-target="3000" data-suffix="+">0</div><span class="lab">Community Network Members</span></div>
+      <div class="stat-cell reveal" style="--i:1"><div class="stat-number" data-target="4" data-suffix="">0</div><span class="lab">Regional Groups</span></div>
+      <div class="stat-cell reveal" style="--i:2"><div class="stat-number" data-target="20" data-suffix="+">0</div><span class="lab">Events Shared Daily</span></div>
+      <div class="stat-cell reveal" style="--i:3"><div class="stat-number" data-target="115" data-suffix="+">0</div><span class="lab">Newsletter Subscribers</span></div>
+    </div>
+
+    <div class="chart-card reveal">
+      <h3 class="chart-title">Community Network Growth</h3>
+      <svg viewBox="0 0 700 280" width="100%" height="280">
+        <defs>
+          <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#b8460e" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#b8460e" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <g style="transform:translateY(40px);">
+          <text x="0" y="-15" font-size="12" fill="var(--ink-soft)" font-family="var(--ff-mono)" text-anchor="start">3.2K</text>
+          <text x="0" y="55" font-size="12" fill="var(--ink-soft)" font-family="var(--ff-mono)" text-anchor="start">2.9K</text>
+          <text x="0" y="125" font-size="12" fill="var(--ink-soft)" font-family="var(--ff-mono)" text-anchor="start">2.6K</text>
+          <line x1="30" y1="0" x2="700" y2="0" stroke="var(--line-light)" stroke-width="1"/>
+          <line x1="30" y1="70" x2="700" y2="70" stroke="var(--line-light)" stroke-width="1" stroke-dasharray="4,4"/>
+          <line x1="30" y1="140" x2="700" y2="140" stroke="var(--line-light)" stroke-width="1" stroke-dasharray="4,4"/>
+          <polyline class="chart-area" id="chartArea" points="30,140 240,47 445,23 650,0 650,140 30,140" fill="url(#areaGrad)"/>
+          <polyline class="chart-line" id="chartLine" points="30,140 240,47 445,23 650,0" stroke="var(--ember)" stroke-width="3" fill="none"/>
+        </g>
+        <text x="350" y="270" font-size="12" fill="var(--ink-soft)" font-family="var(--ff-mono)" text-anchor="middle">2,600 → 3,000 → 3,100 → 3,200+ members</text>
+      </svg>
+    </div>
+
+    <div class="data-box reveal" style="margin-top:32px;">
+      <strong>📊 Key Metrics:</strong><br/>
+      • <strong>WhatsApp network</strong>: 3,000+ members across 4 regional groups<br/>
+      • <strong>Daily event volume</strong>: 20+ opportunities shared across the network<br/>
+      • <strong>Newsletter</strong>: 115+ subscribers, with peak open rates around 75–80%<br/>
+      • <strong>Product status</strong>: Live mobile-first build; social and messaging layers in active development
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Why This Matters</div>
+      <h2 class="h2">One front door, <em>open to everyone</em>.</h2>
+      <p class="lede">Jewish LA is plural. Chabad, Reform, Conservative, Orthodox, unaffiliated, spiritual, secular, social. All at the same time. All deserve a place.</p>
+    </div>
+
+    <div class="two-col" style="margin-top:50px;">
+      <ul class="check-list reveal">
+        <li><span class="tick">✓</span><strong>Built around current listings.</strong> Public event information is organized into one feed and reviewed as it is added.</li>
+        <li><span class="tick">✓</span><strong>Built with the community.</strong> Every feature exists because a real person needed it.</li>
+        <li><span class="tick">✓</span><strong>For everyone in LA.</strong> Affiliated or unaffiliated, plugged in or newly curious.</li>
+        <li><span class="tick">✓</span><strong>Infrastructure, not a campaign.</strong> Meant to be useful in 5 years, not a viral moment.</li>
+        <li><span class="tick">✓</span><strong>Community-sourced and reviewed.</strong> Listings come from known LA Jewish organizations and event organizers.</li>
+      </ul>
+      <div class="reveal">
+        <div class="data-box" style="background:linear-gradient(135deg,rgba(232,184,75,.08),rgba(232,160,154,.06));">
+          <strong>🎯 What the Existing Network Shows:</strong><br/><br/>
+          <em>3,000+ members are already connected through LA Jewish Events across four regional groups.</em><br/>
+          — Existing Community Network<br/><br/>
+          <em>20+ event opportunities can move through the network in a single day.</em><br/>
+          — Ongoing Event Distribution<br/><br/>
+          <em>The public calendar and weekly newsletter already provide a shared discovery layer.</em><br/>
+          — Existing Community Infrastructure
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR ORGANIZATIONS -->
+<section class="section section-light" id="orgs">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">For Organizations</div>
+      <h2 class="h2">List your programming. Reach the people who want to be there.</h2>
+      <p class="lede">Shuls, minyanim, nonprofits — you already do the hard work. LAJT makes sure the right people actually hear about it.</p>
+    </div>
+
+    <ul class="check-list reveal" style="margin-top:40px;max-width:600px;">
+      <li><span class="tick">✓</span>Reach LA Jewish young adults across four regional groups</li>
+      <li><span class="tick">✓</span>Organization profiles and RSVP visibility in development</li>
+      <li><span class="tick">✓</span>Event invitations and messaging infrastructure in development</li>
+      <li><span class="tick">✓</span>Discovery through filters, regions and personalized recommendations</li>
+      <li><span class="tick">✓</span>Use the existing LA Jewish Events submission workflow</li>
+    </ul>
+
+    <a href="mailto:LAJevents.inbox@gmail.com?subject=List%20My%20Organization%20on%20LAJT" class="btn btn-gold" style="margin-top:32px;">List Your Organization</a>
+  </div>
+</section>
+
+<!-- FOR FUNDERS -->
+<section class="section section-dark" id="funders">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">For Funders & Federations</div>
+      <h2 class="h2">Fund the front door, not another flyer.</h2>
+      <p class="lede">Every organization funds their own outreach. It's expensive, duplicative, and misses the unaffiliated young adult who isn't in anyone's list. LAJT is the shared infrastructure that makes every dollar go further.</p>
+    </div>
+
+    <div class="chart-card reveal" style="margin-top:50px;">
+      <h3 class="chart-title">Initial $3,000 Grant Budget</h3>
+      <svg viewBox="0 0 600 300" width="100%" height="300">
+        <circle cx="150" cy="150" r="80" fill="none" stroke="#c9a54b" stroke-width="28" stroke-dasharray="192.68 309.97" stroke-dashoffset="0" transform="rotate(-90 150 150)"/>
+        <circle cx="150" cy="150" r="80" fill="none" stroke="#b8460e" stroke-width="28" stroke-dasharray="117.29 385.36" stroke-dashoffset="-192.68" transform="rotate(-90 150 150)"/>
+        <circle cx="150" cy="150" r="80" fill="none" stroke="#5f7350" stroke-width="28" stroke-dasharray="192.68 309.97" stroke-dashoffset="-309.97" transform="rotate(-90 150 150)"/>
+        <text x="150" y="150" text-anchor="middle" dominant-baseline="middle" font-family="var(--ff-display)" font-size="32" fill="#fff">$3K</text>
+        <text x="150" y="175" text-anchor="middle" font-family="var(--ff-mono)" font-size="11" fill="rgba(246,241,228,.7)">Initial Build Budget</text>
+
+        <g style="transform:translateX(300px);">
+          <rect x="0" y="20" width="20" height="100" fill="#c9a54b"/>
+          <text x="30" y="75" font-size="12" fill="var(--ink-soft)" font-family="var(--ff-mono)">38% Founder/Admin · $1,150</text>
+          
+          <rect x="0" y="130" width="20" height="60" fill="#b8460e"/>
+          <text x="30" y="165" font-size="12" fill="var(--ink-soft)" font-family="var(--ff-mono)">23% Systems/Tech · $700</text>
+          
+          <rect x="0" y="200" width="20" height="100" fill="#5f7350"/>
+          <text x="30" y="255" font-size="12" fill="var(--ink-soft)" font-family="var(--ff-mono)">38% Growth/Outreach · $1,150</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="data-box reveal">
+      <strong>💡 The Funder Value Prop:</strong><br/>
+      Without LAJT: Each organization independently builds audience, reaches only their network, funders see limited ROI.<br/><br/>
+      With LAJT: One shared audience grows with each new user. Every partner organization benefits. Funders' dollars compound across the ecosystem.
+    </div>
+
+    <a href="mailto:LAJevents.inbox@gmail.com?subject=LAJT%20Funder%20Inquiry" class="btn btn-gold" style="margin-top:32px;">Request Funder Materials</a>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section class="section section-light" id="partner">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Partner With Us</div>
+      <h2 class="h2">Three ways to plug in.</h2>
+      <p class="lede">Whatever seat you're in, there's a path forward.</p>
+    </div>
+
+    <div class="card-grid reveal">
+      <div class="card">
+        <span class="card-tag">Community</span>
+        <h3>Organizations</h3>
+        <p>Shuls, minyanim, nonprofits. List your events, prepare for organization profiles, reach the community.</p>
+        <a href="mailto:LAJevents.inbox@gmail.com?subject=List%20Organization%20on%20LAJT" class="btn btn-outline" style="color:var(--ink);border-color:var(--line-light);">Get Listed →</a>
+      </div>
+      <div class="card">
+        <span class="card-tag">Funding</span>
+        <h3>Foundations</h3>
+        <p>Back shared infrastructure that compounds across every organization. Fund the network, not the node.</p>
+        <a href="mailto:LAJevents.inbox@gmail.com?subject=LAJT%20Partnership%20Inquiry" class="btn btn-outline" style="color:var(--ink);border-color:var(--line-light);">Let's Talk →</a>
+      </div>
+      <div class="card">
+        <span class="card-tag">Sponsorship</span>
+        <h3>Brands</h3>
+        <p>Reach an engaged, values-aligned community. Native, not an ad.</p>
+        <a href="mailto:LAJevents.inbox@gmail.com?subject=Sponsor%20LAJT" class="btn btn-outline" style="color:var(--ink);border-color:var(--line-light);">Sponsor →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER STORY -->
+<section class="section section-dark" id="founder">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">The Founder</div>
+      <h2 class="h2">Why I built this.</h2>
+    </div>
+
+    <div class="two-col reveal" style="margin-top:40px;">
+      <div>
+        <div class="timeline">
+          <div class="tl-item"><span class="tl-tag">The Spark</span><h4>3,000+ people, four groups</h4><p>Events disappeared into threads. No one had one place to see what was happening.</p></div>
+          <div class="tl-item"><span class="tl-tag">First Code</span><h4>One HTML file</h4><p>Nights and weekends. A feed, filters and live calendar data.</p></div>
+          <div class="tl-item"><span class="tl-tag">Redesign</span><h4>Mobile tabs + design system</h4><p>Event feed. Map. Network. Premium feel.</p></div>
+          <div class="tl-item"><span class="tl-tag">Network</span><h4>Invites + connections</h4><p>Friend requests, event invites and messaging infrastructure are being built.</p></div>
+          <div class="tl-item"><span class="tl-tag">Today</span><h4>Building for funders & Federation</h4><p>This is infrastructure. It should last.</p></div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(232,184,75,.06),rgba(232,160,154,.04));border-radius:18px;padding:32px;border:1px solid var(--line-dark);">
+        <p style="color:rgba(246,241,228,.9);font-size:16px;margin:0 0 16px;">I didn't set out to build an app. I set out to stop losing track of Shabbat dinners.</p>
+        <p style="color:rgba(246,241,228,.8);font-size:15px;margin:0 0 16px;line-height:1.6;">Our community's event life was already rich — it just lived across dozens of WhatsApp threads, Instagram stories, and email blasts that only the most plugged-in people ever saw in full. I kept watching genuinely great programming reach a fraction of the people who would have loved to be there.</p>
+        <div style="background:rgba(11,30,61,.5);border-left:3px solid var(--brass);padding:16px;margin:20px 0;border-radius:6px;font-style:italic;color:rgba(246,241,228,.9);">
+          "The goal was never to replace the group chat. It was to give it a front door."
+        </div>
+        <p style="color:rgba(246,241,228,.75);font-size:14px;margin:0;">LAJT is still, at its core, an engineering project built by someone inside this community. Every feature exists because a real person needed it, not because it looked good on a roadmap.</p>
+        <p style="color:var(--brass-light);font-family:var(--ff-mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin:24px 0 0;font-weight:600;">— Andrew, Founder</p>
+      </div>
+    </div>
+
+    <div id="funder-info" class="data-box reveal" style="margin-top:40px;scroll-margin-top:100px;">
+      <strong>A note for funders:</strong><br/>
+      I'm a first-time solo founder building LA Jewish Tonight from inside the community it serves. I bring years of hands-on community organizing and an existing grassroots network; early support would help turn a proven community need into durable shared infrastructure.
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-light">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Let's Connect</div>
+      <h2 class="h2">Interested? Let's talk.</h2>
+      <p class="lede">Whether you're a community member, organization, or funder — reach out. We'd love to hear from you.</p>
+    </div>
+
+    <div class="contact-form reveal" style="margin-top:48px;">
+      <form id="contactForm">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" name="name" placeholder="Full name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" name="email" placeholder="you@organization.org" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Organization / Role</label>
+          <input type="text" class="form-input" name="org" placeholder="Org name & your title" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">I'm interested in...</label>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+            <label style="display:flex;gap:8px;cursor:pointer;font-size:14px;color:var(--ink);">
+              <input type="checkbox" name="interest" value="organization">Listing as an organization
+            </label>
+            <label style="display:flex;gap:8px;cursor:pointer;font-size:14px;color:var(--ink);">
+              <input type="checkbox" name="interest" value="funding">Funding / partnership
+            </label>
+            <label style="display:flex;gap:8px;cursor:pointer;font-size:14px;color:var(--ink);">
+              <input type="checkbox" name="interest" value="sponsorship">Sponsorship
+            </label>
+            <label style="display:flex;gap:8px;cursor:pointer;font-size:14px;color:var(--ink);">
+              <input type="checkbox" name="interest" value="learning">Learning more
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message (Optional)</label>
+          <textarea class="form-textarea" name="message" placeholder="Tell us more..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold">Send to LAJevents.inbox@gmail.com</button>
+      </form>
+      <p style="font-size:12px;color:var(--ink-soft);margin-top:16px;">We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="https://www.lajewishtonight.com" class="brand" style="font-size:19px;">🕯️ LA <em>Jewish</em> Tonight</a>
+        <p>The real-time front door to Jewish life in Los Angeles — for community members, organizations, and the funders who back them.</p>
+      </div>
+      <div>
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="https://www.lajewishtonight.com">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="https://www.lajewishtonight.com">Homepage</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Partners</h5>
+        <ul>
+          <li><a href="#orgs">For Organizations</a></li>
+          <li><a href="#funders">For Funders</a></li>
+          <li><a href="#partner">Partnership</a></li>
+          <li><a href="#founder">Founder Story</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:LAJevents.inbox@gmail.com">LAJevents.inbox@gmail.com</a></li>
+          <li><a href="mailto:laj.events@gmail.com?subject=List%20an%20Organization%20on%20LA%20Jewish%20Tonight" class="org-mailto-popup">List an Org</a></li>
+          <li><a href="#funder-info">Funder Info</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 LA Jewish Tonight. Los Angeles, CA.</span>
+      <span>Built inside the community it serves.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  const topbar = document.getElementById('topbar');
+  const doc = document.documentElement;
+  if (window.scrollY > 40) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+  const pct = (window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100;
+  topbar.style.width = pct + '%';
+});
+
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Animated counters
+const countObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      animateCount(entry.target);
+      countObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:0.5});
+document.querySelectorAll('.stat-number').forEach(el => countObserver.observe(el));
+
+function animateCount(el){
+  const target = parseInt(el.dataset.target, 10);
+  const suffix = el.dataset.suffix || '';
+  const dur = 1400;
+  const start = performance.now();
+  function tick(now){
+    const p = Math.min((now-start)/dur, 1);
+    const eased = 1 - Math.pow(1-p, 3);
+    const val = Math.round(target * eased);
+    el.innerHTML = val.toLocaleString() + (suffix ? '<span class="suffix">'+suffix+'</span>' : '');
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+// Chart animation
+const chartObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      document.getElementById('chartLine').classList.add('drawn');
+      document.getElementById('chartArea').classList.add('drawn');
+      chartObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:0.4});
+if(document.getElementById('chartSvg')) chartObserver.observe(document.getElementById('chartSvg'));
+
+// Organization mail popup
+document.querySelectorAll('.org-mailto-popup').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.open(link.href, '_blank', 'noopener,noreferrer');
+  });
+});
+
+// Form submission
+document.getElementById('contactForm').addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const subject = `LAJT Inquiry: ${data.get('org') || 'Contact'}`;
+  const interests = Array.from(form.querySelectorAll('input[name="interest"]:checked')).map(i=>i.value).join(', ');
+  const body = `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nOrganization: ${data.get('org')}\nInterests: ${interests || 'Not specified'}\nMessage: ${data.get('message') || 'None'}`;
+  window.location.href = `mailto:LAJevents.inbox@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  alert('Opening your email client. Please send to confirm.');
+});
+</script>
+
+</body>
+</html>
